@@ -1,0 +1,9 @@
+<h3>Binding two-ways</h3>
+<p>myValue vaut {{myValue}}</p>
+<input [(ngModel)]="myValue" /> <!--ecrire dans une propriete-->
+<hr />                          <!--creer une ligne -->              
+<p>Mon nombre: {{monChiffre}}</p>
+<button [class]="monChiffre == 0 ? 'rouge' : 'vert'"(click)="increment(2)" [disabled]="monChiffre >= 10">+</button>
+<!--(click)  le lie a une methode a un click button-->
+<!--[disabled] lie une expression a un attribut html natif-->
+<button [class]="monChiffre >= 0 ? 'vert' : 'rouge'"(click)="decrement()">-</button>

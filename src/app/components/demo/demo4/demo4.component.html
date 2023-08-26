@@ -1,0 +1,155 @@
+<h3>Les directives structurelles</h3>
+<h4>1 : La directive conditionnel : *ngIf</h4>
+
+ Au cas ou, la négation du ngIf est "ridicule"
+    on préférera utiliser une inverstion d'un ngif sur la même balise copy/paste
+-->
+<p *ngIf="isShowTexte1">
+    TEXTE : 1 -> Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+    Officiis numquam laudantium corporis magnam aperiam itaque?
+</p>
+<p *ngIf="!isShowTexte1">
+    Texte 1 : Caché<br>
+</p>
+<button (click)="triggerTexte1()">Afficher texte 1</button>
+
+
+
+<br><br><br>
+
+
+<!-- Au cas ou, le ELSE du ngIf est plus conséquent, type : selector de compo complet
+    on préférera utiliser la balise angular <ng-template></ng-template> qui ne sera pas traduite en html !
+    cette balise "disparait" lors de la compilation, donnant en lieu et place au composant par selecteur 
+-->
+<p *ngIf="isShowTexte2; else hideText2">
+    TEXTE : 2 -> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Velit omnis, repellat accusamus soluta molestiae excepturi.
+</p>
+
+<ng-template #hideText2>
+    <p>Texte 2 : Caché</p>
+</ng-template>
+<button (click)="triggerTexte2()">Afficher texte 2</button>
+
+
+
+<h4>2 : La directive de boucle : *ngFor</h4>
+
+
+<h5>Boucle structurelle classique</h5>
+<ul>
+    <!-- Je répète la structure html sur laquelle est accrochée mon *ngFor, ici le <li>-->
+    <li *ngFor="let fruit of listeFruits">
+        {{ fruit }}
+    </li>
+    <!--
+        listeFruits.forEach((fruit) => {
+            console.log(`<li>${fruit}</li>`)
+        })
+    -->
+</ul>
+    
+<br><br><br>
+
+<h5>Boucle avec Index du tableau parcouru</h5>
+<ul>
+    <!-- je peux également récupérer l'index sur lequelle je me trouve acturellement-->
+    <li *ngFor="let fruit of listeFruits; let i = index">
+        index : {{i}} - {{ fruit }}
+    </li>
+
+    <!--
+        listeFruits.forEach((fruit, index) => {
+            console.log(`<li>${fruit}</li>`)
+        })
+    -->
+</ul>
+
+<br><br><br>
+
+<h5>Boucle en Mode KVP - ( Key Value Pair ) Pipe</h5>
+<ul>
+
+    <!-- transformation de ma boucle en KVP -->
+    <li *ngFor="let fruit of listeFruits | keyvalue">
+        {{fruit.key}} - {{fruit.value}}
+    </li>
+</ul>
+
+
+<br><br><br>
+<h5>Mes clients en ordre de payement : test boucle multi ngFor* et *ngIf</h5>
+<ul>
+    <ng-container *ngFor="let client of listeClients">
+        <li  *ngIf="client.ordered == true">
+            {{ client.id }} : {{ client.name }} - {{ client.ordered }}
+        </li>
+    </ng-container>
+</ul>
+
+<p>
+    ATTENTION !!!!!! on ne peux pas mettre dans un balise, un *ngIf et un *ngFor en même temps<br>
+    Vous pouvez, au besoin, <ng-container></ng-container>, elle n'apparait juste pas même avec condition
+</p>
+
+<hr />
+<h3>Le panier de courses</h3>
+
+<ul>
+    <li *ngFor="let fruit of listeFruits; let i = index">
+        index : {{i}} - {{ fruit }}
+    </li>
+
+    <!--
+        listeFruits.forEach((fruit, index) => {
+            console.log(`<li>${fruit}</li>`)
+        })
+    -->
+</ul>
+
+<table>
+    <input type="text">
+    <input type="number">
+    <button>AddList</button>
+</table>
+<h3>Le panier de courses</h3>
+
+<ul>
+    <li *ngFor="let aliment of aliments; let i = index">
+        index : {{i}} - {{ aliment }}
+    </li>
+
+    <!--
+        listeFruits.forEach((fruit, index) => {
+            console.log(`<li>${fruit}</li>`)
+        })
+    -->
+</ul>
+<ul>
+    <li *ngFor="let panier of paniers; let i = index">
+        index : {{i}} - {{ panier }}
+    </li>
+
+    <!--
+        listeFruits.forEach((fruit, index) => {
+            console.log(`<li>${fruit}</li>`)
+        })
+    -->
+</ul>
+
+
+    <input type="text" value="text">
+    <input type="number" value="number">
+    <button>AddPanier</button>
+
+<!-- <label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+<app-name-editor></app-name-editor>
+<p>Value: {{ name.value }}</p> -->
+<ul>
+    <li *ngFor="let aliment of aliments">{{aliment.name}}</li>
+</ul>
+<ul>
+    <li *ngFor="let panier of paniers">{{panier.name}}</li>
+</ul> 

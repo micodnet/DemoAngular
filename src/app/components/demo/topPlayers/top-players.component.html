@@ -1,0 +1,12 @@
+<h1>Les input output </h1>
+
+<div *ngFor="let client of listClient">
+    <app-player 
+        [name]="client.name"
+        [inOrdered]="client.inOrdered"
+        [id]="client.id"
+        (downgradeEvent)="downgradeInParent($event)"
+        (upgradeEvent)="upgradeInParent($event)"
+    >
+    </app-player>
+</div>

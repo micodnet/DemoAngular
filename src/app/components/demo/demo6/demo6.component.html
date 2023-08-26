@@ -1,0 +1,8 @@
+<h1>Systeme de login</h1>
+
+<input type="text" [(ngModel)]="login" placeholder="Login">
+<input type="password" [(ngModel)]="password" placeholder="Mot de passe">
+<button *ngIf="!isConnect" (click)="connect()">Connection</button>
+<button *ngIf="isConnect" (click)="deconnect()">Deconnection</button>
+
+<h2>Current State Connect : {{ isConnect}}</h2>

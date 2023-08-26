@@ -1,0 +1,16 @@
+<table style="border:1px solid black;">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>In Ordered</th>
+    </tr>
+    <tr>
+        <td>{{ id }}</td>
+        <td>{{ name }}</td>
+        <td>
+            {{ inOrdered }}
+            <button (click)="upgrade()">Upgrade Status</button>
+            <button (click)="downgrade()">Downgrade Status</button>
+        </td>
+    </tr>
+</table>

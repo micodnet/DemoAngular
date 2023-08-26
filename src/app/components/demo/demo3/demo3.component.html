@@ -1,0 +1,56 @@
+<h3>Pipes</h3>
+<p>Valeur de myString : {{myString}}</p>
+<p>Uppercase pipe : {{myString | uppercase}}</p>
+<p>Lowercase pipe : {{myString | lowercase}}</p>
+<p>Titlecase pipe : {{myString | titlecase}}</p>
+<hr />
+<p>Valeur de myNumber ; {{myNumber}}</p>
+<p>Number pipe : {{myNumber | number : '02.0-2'}}</p>
+<p>Currency pipe : {{myNumber | currency : 'USD'}}</p>
+<hr />
+<p>Valeur de ma date : {{myDate}}</p>
+<p>Date pipe : {{myDate | date: 'dd-mm-yyyy'}}</p>
+<hr />
+<p>Valeur de myObject : {{myObject}}</p>
+<p>Json pipe : {{myObject | json}}</p>
+<hr />
+<p>Conversion euro/usd</p>
+<p>Euro : {{euro}}</p>
+<p>Bitcoin : {{euro | eurToBtc}}</p>
+<hr />
+<h4>Bitcoin Price Tracker</h4>
+<p>Current Bitcoin Price: <span id="bitcoinPrice"></span> USD</p>
+<hr />
+<h4>Euro to USD Converter</h4>
+<p>Enter amount in Euros: <input type="number" id="euroAmount"></p>
+<p>Equivalent in USD: <span id="usdEquivalent"></span></p>    
+<hr />
+<h4>Currency to BTC Converter</h4>
+    <label for="amount">Enter Amount:</label>
+    <input type="number" id="amount">
+    
+    <label for="currency">Select Currency:</label>
+    <select id="currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+         Add more currency options if needed 
+    </select>
+    
+    <p>Equivalent in BTC: <span id="btcEquivalent"></span></p>
+    <hr />
+    <p>Multi params dans le pipes graçe au ...args[] "indexeur de paramètres"</p>
+    <p>Powered by bibi : {{poweredLoulou}}</p>
+    <p>Powwwwwww : {{poweredLoulou | power : 2 : 3 : 1}}</p>
+    <hr />
+    <p>EXOS : Convertisseur JHMS custom pipe</p>
+<p>Temps en seconde : {{secondeConverter}}</p>
+<p>{{secondeConverter | custom}}</p>
+    
+    
+
+
+
+
+
+
+

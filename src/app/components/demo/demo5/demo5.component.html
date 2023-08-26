@@ -1,0 +1,24 @@
+<h3>Les directives d'attributs customs</h3>
+<h4>1&2 : La directive d'attribut : ngClass & ngStyle</h4>
+
+<button (click)="darkMode()">{{ isDark }}</button>
+
+<ul [ngStyle]=" { 'background-color' : darkColor } ">
+
+    <li *ngFor="let client of listCLient"
+        [ngClass]="getColorPayement(client)"
+    >
+        ID : {{ client.id }} - {{ client.name }} | {{client.inOrdered }}
+    </li>
+
+</ul>
+
+
+
+<h4>3 : La directive d'attribut custom</h4>
+
+<p appHighlight>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore porro culpa aspernatur dolor veniam.</p>
+<p  appHighlight appHighlightDynamics>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore porro culpa aspernatur dolor veniam.</p>
+<p appHighlightDynamics>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore porro culpa aspernatur dolor veniam.</p>
+<p appHighlightDynamics>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore porro culpa aspernatur dolor veniam.</p>
+<p appHighlightDynamics>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore porro culpa aspernatur dolor veniam.</p>

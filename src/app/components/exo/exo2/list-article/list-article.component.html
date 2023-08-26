@@ -1,0 +1,23 @@
+<h1>Panier de course V2</h1>
+
+
+<app-Exo2
+    (addArticleEvent)="addToCart($event)"
+></app-Exo2>
+
+<fieldset style="width:55%; float:left;">
+    <legend>Liste des courses</legend>
+
+    <ul>
+        <li *ngFor="let itemCart of listCart">
+            <app-article
+                [dateAjout]="itemCart.dateAjout"
+                [name]="itemCart.name"
+                [qty]="itemCart.qty"
+                (delArticleEvent)="delArticle($event)"
+            ></app-article>
+        </li>
+    </ul>
+</fieldset>
+
+<div style="clear:both;"></div>

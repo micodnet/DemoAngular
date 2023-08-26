@@ -1,0 +1,17 @@
+<fieldset style="width:35%; float:left;">
+    <legend>Système d'ajout</legend>
+    
+    <label>Article</label><input [(ngModel)]="newArtName" type="text" placeholder="votre article"><br><br>
+    <label>Quantité</label><input [(ngModel)]="newArtQty" max="5" min="1" type="number"><br><br>
+    <button 
+        (click)="addToCart()"
+        *ngIf="
+            newArtName != undefined && 
+            newArtQty != 0 && 
+            newArtQty != undefined && 
+            newArtQty >= 1 && 
+            newArtQty <= 5"
+    >
+        Ajouter
+    </button><br>
+</fieldset>
