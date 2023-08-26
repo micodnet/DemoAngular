@@ -1,4 +1,4 @@
-export interface Article {
+export interface article {
     name : string
     qty : number
 }
