@@ -1,0 +1,9 @@
+<div style="margin-top: 50px;">
+<p>demo9 works!</p>
+<ul>
+  <li *ngFor="let nom of list">
+    <a [routerLink]="['../cible', nom]">{{nom}}</a> &nbsp;
+    <button (click)="naviguer(nom)">Vers la cible</button>
+  </li>
+</ul>
+</div>

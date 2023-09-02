@@ -1,0 +1,14 @@
+<fieldset style="width:55%; float:left;">
+  <legend>Liste des courses</legend>
+
+  <ul>
+      <li *ngFor="let itemCart of listCart">
+          {{ itemCart.qty }} x {{ itemCart.name }}
+          ajouté le {{ itemCart.dateAjout | date : "dd/MM/yyyy hh:mm:ss" }}
+          - Traduction pour mamy : {{ itemCart.qty | mamyPipe}}
+          <button (click)="delArticle(itemCart.name)" >X</button>
+      </li>
+  </ul>
+</fieldset>
+
+

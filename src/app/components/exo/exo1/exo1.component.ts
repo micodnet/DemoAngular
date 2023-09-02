@@ -62,4 +62,19 @@ export class Exo1Component {
     //   else return false
     // })
   }
+  // buttonText!: string;
+  // this.buttonText = 'Ajouter';
+  // onAddSnap(){
+  //   This.Change++
+  // }
+  // onSnap(){
+  //   if(this.buttonText === 'Ajouter'){
+  //     this.Change++;
+  //     this.buttonText = 'Hey, Ajouter';
+  //   }
+  //   else{
+  //     this.Change--;
+  //     this.buttonText = 'Ajouter';
+  //   }
+  // }
 }

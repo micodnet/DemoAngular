@@ -1,13 +1,39 @@
-<h1>DemoAngular</h1>
-<p>Technofuturtic</p>
-<p>
-  <a routerLink="home">Home</a> |
-  <a routerLink="about">About</a> |
-  <a routerLink="demo"> Demos</a> |
-  <a routerLink="exo">Exos</a>
-</p>
+<header>
+  <h3>DemoAngular</h3>
+  <p>Technofuturtic</p>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo right">Login</a>
+      <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a routerLink="home">Home</a></li>
+        <li><a routerLink="about">About</a></li>
+        <li><a routerLink="demo"> Demos</a></li>
+        <li><a routerLink="exo">Exos</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
+
+  <hr />
+</header>
 <!-- <hr /> tracer une ligne d'espace -->
-<hr />
 <router-outlet></router-outlet>
-<hr />
-<p>&copy; Bstorm2023</p>
+<footer>
+  <hr />
+  <p>&copy; Bstorm2023</p>
+
+  <figure>
+    <img title="Logo de angular" alt="Logo de mon site" src="/assets/logo_angular.png">
+    <figcaption>Logo de angular</figcaption>
+  </figure>
+  
+  <a href="http://google.be" target="_blank">Lien vers google</a>
+  
+</footer>
